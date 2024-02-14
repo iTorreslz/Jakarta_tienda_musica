@@ -1,0 +1,19 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<script src="https://kit.fontawesome.com/b96da17792.js" crossorigin="anonymous"></script>
+<script>
+    let logOut = document.querySelector('.logOuta');
+    logOut.addEventListener('click', function (event) {
+        event.preventDefault();
+        let action = logOut.parentNode;
+        action.submit();
+    });
+    let images = document.querySelectorAll('.imagesHome');
+    images.forEach(image => {
+        image.addEventListener('click', function () {
+            let button = image.parentNode.parentNode.children[0];
+            button.click();
+        });
+    });
+</script>
+<script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>

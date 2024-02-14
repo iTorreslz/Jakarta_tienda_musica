@@ -1,0 +1,22 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<footer class="p-4 bg-white shadow md:flex md:items-center md:justify-between md:p-6" style="background: #7CB9E8">
+    <span class="text-sm text-black-500 sm:text-center dark:text-black-400">© 2024 <a href="${pageContext.request.contextPath}/index.jsp"
+                                                                                    class="hover:underline"
+                                                                                    target="_blank">AMADEUS INSTRUMENTOS, S.L. </a>. Todos los derechos reservados.
+    </span>
+    <ul class="flex flex-wrap items-center mt-3 sm:mt-0">
+        <li>
+            <a href="#" class="mr-4 text-sm text-black-500 hover:underline md:mr-6">Sobre nosotros</a>
+        </li>
+        <li>
+            <a href="#" class="mr-4 text-sm text-black-500 hover:underline md:mr-6">Aviso de
+                privacidad</a>
+        </li>
+        <li>
+            <a href="#" class="mr-4 text-sm text-black-500 hover:underline md:mr-6">Condiciones de compra</a>
+        </li>
+        <li>
+            <a href="#" class="text-sm text-black-500 hover:underline">Contacto</a>
+        </li>
+    </ul>
+</footer>

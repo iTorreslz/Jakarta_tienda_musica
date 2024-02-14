@@ -1,0 +1,64 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<header>
+    <nav class="border-gray-200 px-4 lg:px-6 py-2.5">
+        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+            <div class="flex max-w-screen-xl">
+                <a href="${pageContext.request.contextPath}/index.jsp" class="flex items-center mr-8">
+                    <img src="${pageContext.request.contextPath}/img/Logo.png" class="mr-3 sm:h-9" style="height: 50px;"
+                         alt="Amadeus Logo"/>
+                </a>
+                <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                        <li>
+                            <a href="<%=application.getContextPath()%>/"
+                               class="block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-black-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                               aria-current="page">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="<%=application.getContextPath()%>/clases/3"
+                               class="block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-black-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Arco</a>
+                        </li>
+                        <li>
+                            <a href="<%=application.getContextPath()%>/clases/1"
+                               class="block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-black-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Viento-madera</a>
+                        </li>
+                        <li>
+                            <a href="<%=application.getContextPath()%>/clases/2"
+                               class="block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-black-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Viento-metal</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex items-center lg:order-2">
+                <% if (request.getSession().getAttribute("userLogin") == null) { %>
+                <a href="<%=application.getContextPath()%>/users/login"
+                   class="lg:dark:hover:text-white text-gray-800 dark:text-black hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
+                    Acceso
+                </a>
+                <a href="<%=application.getContextPath()%>/users/registro"
+                   class="lg:dark:hover:text-black text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                    Registrarse
+                </a>
+                <% } else { %>
+                <a href="<%=application.getContextPath()%>/users/micuenta"
+                   class="lg:dark:hover:text-white text-gray-800 dark:text-black hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
+                    Mi cuenta
+                </a>
+                <form class="formOut" action="${pageContext.request.contextPath}/users/logout" method="post">
+                    <a style="cursor: pointer;"
+                       class=" logOuta lg:dark:hover:text-black text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                        Cerrar sesión
+                    </a>
+                </form>
+                <% } %>
+                <% if (request.getSession().getAttribute("userAdmin") != null) { %>
+                <a href="<%=application.getContextPath()%>/admin"
+                   class="lg:dark:hover:text-white text-gray-800 dark:text-black hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
+                    Administrar
+                </a>
+                <% } %>
+                <a href="<%=application.getContextPath()%>/carrito/"><i class="fa-solid fa-cart-shopping" style="margin-left: 15px;"></i></a>
+            </div>
+        </div>
+    </nav>
+</header>
